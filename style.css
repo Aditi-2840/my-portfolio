@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: rgb(247, 86, 118);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+  position: fixed;
+  /* opacity: 1.1; */
+}
+nav .logo{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: rgb(247, 86, 118);
+  }
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.content div{
+  font-size: 40px;
+  font-weight: 700;
+}
+img{
+  width: 100%;
+  height: 80%;
+  /* opacity: 0.5; */
+}
+section{
+  padding: 70px 0;
+}
+.max-width{
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+.about,.about-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .title{
+  /* position: relative; */
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  padding-bottom: 5px;
+  font-family: 'Ubuntu', sans-serif;
+  
+}
+section .title::before{
+  content: "";
+  /* position: absolute; */
+  bottom: 0px;
+  left: 50%;
+  width: 180px;
+  height: 3px;
+  background: #111;
+  
+  transform: translateX(-50%);
+}
+section .title::after{
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  font-size: 20px;
+  color: rgb(247, 86, 118);
+  padding: 0 3px;
+  background: #fff;
+  transform: translateX(-50%);
+}
+.col {
+  float: left;
+ 
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.home{
+  display: flex;
+  background: url("image/background2.png") no-repeat center;
+  height: 100vh;
+  color: #fff;
+  min-height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Ubuntu', sans-serif;
+}
+.home .max-width{
+  margin: auto 0 auto 30px;
+}
+.home .home-content .text-1{
+  font-size: 27px;
+}
+.home .home-content .text-2{
+  font-size: 75px;
+  font-weight: 600;
+  margin-left: -3px;
+}
+.home .home-content .text-3{
+  font-size: 40px;
+  margin: 5px 0;
+}
+.home .home-content .text-3 span{
+  color: rgb(247, 86, 118);
+  font-weight: 500;
+}
+.home .home-content a{
+  display: inline-block;
+  background:rgb(247, 86, 118);
+  color: #fff;
+  font-size: 25px;
+  padding: 12px 36px;
+  margin-top: 20px;
+  font-weight: 400;
+  border-radius: 6px;
+  border: 2px solidrgb(247, 86, 118);
+  transition: all 0.3s ease;
+}
+.home .home-content a:hover{
+  color: rgb(247, 86, 118);
+  background: none;
+}
+/* .about .title::after{
+  content: "who i am";
+} */
+.about .about-content .left{
+  width: 45%;
+}
+.about .about-content .left img{
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.about .about-content .right{
+  width: 55%;
+}
+.about .about-content .right .text{
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.about .about-content .right .text span{
+  color: rgb(247, 86, 118);
+}
+.about .about-content .right p{
+  text-align: justify;
+}
+.about .about-content .right a{
+  display: inline-block;
+  background: rgb(247, 86, 118);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid rgb(247, 86, 118);
+  transition: all 0.3s ease;
+}
+.about .about-content .right a:hover{
+  color: rgb(247, 86, 118);
+  background: none;
+}
+
+/* responsive media query start */
+@media (max-width: 1300px) {
+  .home .max-width{
+      margin-left: 0px;
+  }
+}
+
+@media (max-width: 1104px) {
+  .about .about-content .left img{
+      height: 350px;
+      width: 350px;
+  }
+}
+@media (max-width: 991px) {
+  .max-width{
+      padding: 0 50px;
+  }
+}
+@media (max-width: 947px){
+  .home .home-content .text-2{
+    font-size: 70px;
+}
+.home .home-content .text-3{
+    font-size: 35px;
+}
+.home .home-content a{
+    font-size: 23px;
+    padding: 10px 30px;
+}
+.max-width{
+    max-width: 930px;
+}
+.about .about-content .column{
+    width: 100%;
+}
+.about .about-content .left{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 60px;
+}
+.about .about-content .right{
+    flex: 100%;
+}
+}
+@media (max-width: 690px) {
+  .max-width{
+      padding: 0 23px;
+  }
+  .home .home-content .text-2{
+      font-size: 60px;
+  }
+  .home .home-content .text-3{
+      font-size: 32px;
+  }
+  .home .home-content a{
+      font-size: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .home .home-content .text-2{
+      font-size: 50px;
+  }
+  .home .home-content .text-3{
+      font-size: 27px;
+  }
+  .about .about-content .right .text,
+  .skills .skills-content .left .text{
+      font-size: 19px;
+  }
+}
+
+.skills{
+  background-color: #222;
+  width: 100%;
+  height: 100vh;
+  padding-top: 60px;
+}
+.skills .container{
+  width: 70%;
+  height: 10px;
+  border-radius: 10px;
+  border: 3px solid rgb(247, 86, 118);
+  margin: 10px auto;
+}
+.skills h4{
+  margin-left: 15%;
+  color: floralwhite;
+  
+}
+.bar{
+  box-shadow: 0px 0px 10px 4px rgb(247, 86, 118);
+  height: 5px;
+  margin: 2px 0px;
+  border-radius: 2px;
+  background-color:rgb(247, 238, 238);
+}
+.front{
+  animation: front 2s;
+  width: 90%;
+}
+@keyframes front{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 90%;
+  }
+}
+.back{
+  animation: back 2s;
+  width: 70%;
+}
+@keyframes back{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 70%;
+  }
+}
+.code{
+  animation: code 2s;
+  width: 80%;
+}
+@keyframes code{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 80%;
+  }
+}
+.ps{
+  animation: ps 2s;
+  width: 60%;
+}
+@keyframes ps{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 60%;
+  }
+}
+.skills h2{
+  text-align: center;
+  color: #fff;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: rgb(247, 86, 118);
+  
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(247, 86, 118);
+}
+
+/* Style the container/contact section */
+.contact .container {
+  border-radius: 5px;
+  /* background-color: #f2f2f2; */
+  padding: 10px;
+}
+/* Create two columns that float next to eachother */
+.contact .column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.contact .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .contact .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.work .wrapper h1{
+  text-align: center;
+  font-size: 30px;
+}
+.img-area{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+.single-img{
+  padding: 0 20px 20px;
+  height: 300px;
+  width: 400px;
+}
+
+footer{
+  background: #111;
+  padding: 15px 23px;
+  color: #fff;
+  text-align: center;
+}
+footer span a{
+  color:  rgb(247, 86, 118);
+  text-decoration: none;
+}
+footer span a:hover{
+  text-decoration: underline;
+}
